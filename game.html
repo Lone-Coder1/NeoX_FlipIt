@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coin Toss Game</title>
+  <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+  <script src="coinToss.js" defer></script>
+  <style>
+    /* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  color: #eaeaea;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(0deg, rgba(0,146,125,1) 37%, rgba(0,236,216,1) 68%);
+  background-size: 100% 200%; /* Allows the gradient to cover more area */
+  animation: waveAnimation 10s ease infinite; /* Apply smooth wave animation */
+}
+
+@keyframes waveAnimation {
+  0% {
+    background-position: 0% 0%; /* Start from the top */
+  }
+  50% {
+    background-position: 100% 100%; /* Move to the bottom-right */
+  }
+  100% {
+    background-position: 0% 0%; /* Reset to start */
+  }
+}
+
+/* Rest of your styles */
+.container {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 30px 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 500px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+#wallet-address {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+button {
+  padding: 12px 24px;
+  margin: 10px 0;
+  border: none;
+  background-color: #00927D;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #00ECD8;
+}
+
+#game-container {
+  display: none;
+}
+
+#game-result {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Style for the circular buttons */
+.button {
+  width: 150px;
+  height: 150px;
+  padding: 0;
+  margin: 20px;
+  border-radius: 50%;
+  border: none;
+  background-color: #385A64;
+  color: white;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: inline-block;
+  background-size: cover;
+  background-position: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+  background-color: #00ECD8;
+  transform: scale(1.1);
+}
+
+/* Specific background images for the buttons */
+#heads {
+  background-image: url('heads.jpg');
+}
+
+#tails {
+  background-image: url('tails.jpg');
+}
+
+/* Adjustments for mobile responsiveness */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  button, .button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    width: 120px;
+    height: 120px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Coin Toss Game</h1>
+    <div id="wallet-address">Wallet: Not connected</div>
+    <button id="connect-wallet" class="button">Connect Wallet</button>
+    <button id="claim-tokens" class="button">Claim Tokens</button>
+    <button id="start-game" class="button" style="display:none;">Start Game</button>
+    <div id="game-container" style="display:none;">
+      <button class="button" id="heads"></button>
+      <button class="button" id="tails"></button>
+      <div id="game-result"></div>
+    </div>
+  </div>
+
+</body>
+</html>

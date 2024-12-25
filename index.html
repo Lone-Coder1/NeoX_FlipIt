@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FlipIt - Coin Toss DApp</title>
+    <style>
+        /* Global Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Background Animation */
+        body {
+            background: linear-gradient(0deg, rgba(0,146,125,1) 37%, rgba(0,236,216,1) 68%);
+            background-size: 100% 200%;
+            animation: waveAnimation 10s ease infinite;
+            color: #fff;
+        }
+
+        @keyframes waveAnimation {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        /* Side Navigation Bar */
+        .side-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+
+        .side-nav a {
+            color: #fff;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 18px;
+            text-align: center;
+            width: 100%;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .side-nav a:hover {
+            background-color: #00927D;
+        }
+
+        /* Sections */
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .section {
+            padding: 50px 20px;
+            margin: 40px 0;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        .title {
+            font-size: 3rem;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            color: #eaeaea;
+        }
+
+        /* Play Button */
+        .play-btn {
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            color: #fff;
+            background-color: #00927D;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 30px;
+        }
+
+        .play-btn:hover {
+            background-color: #00ECD8;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .side-nav {
+                width: 200px;
+            }
+            .main-content {
+                margin-left: 200px;
+            }
+            .title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Side Navigation -->
+    <div class="side-nav">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">How to Play</a>
+        <a href="#">Leaderboard</a>
+        <a href="#">FAQ</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+
+        <!-- About Section -->
+        <div class="section">
+            <h2 class="title">About FlipIt</h2>
+            <p class="description">FlipIt is a decentralized application that lets you toss a coin in a trustless and secure environment. Powered by blockchain, your coin flips are recorded on the ledger for full transparency. Whether you're here for fun or strategy, FlipIt is your coin toss destination.</p>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="hero-section">
+          <h1 class="title">Welcome to FlipIt</h1>
+          <p class="description">FlipIt is the ultimate coin toss DApp where you can play and win with a simple coin flip. Try your luck and see if you can win big!</p>
+          <a href="./game.html" class="play-btn">Play Now</a>
+      </div>
+        <!-- How to Play Section -->
+        <div class="section">
+            <h2 class="title">How to Play</h2>
+            <p class="description">To play FlipIt, simply click on the 'Play Now' button. Once you're in the game, you can choose between heads or tails. Make your prediction, toss the coin, and see if you win! The coin flip is powered by smart contracts, ensuring fairness and transparency.</p>
+            <p class="description">No matter if you win or lose, the experience is the same. Every flip is secure, recorded on the blockchain, and provides an exciting way to engage with decentralized technology.</p>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="section">
+            <h2 class="title">Frequently Asked Questions</h2>
+            <p class="description"><strong>Q:</strong> What is FlipIt? <br> <strong>A:</strong> FlipIt is a decentralized coin toss game that allows you to play and win with the flip of a coin using blockchain technology.</p>
+            <p class="description"><strong>Q:</strong> Is it safe to play? <br> <strong>A:</strong> Yes! The game uses smart contracts for full transparency, and all results are recorded on the blockchain.</p>
+            <p class="description"><strong>Q:</strong> How do I start playing? <br> <strong>A:</strong> Click the 'Play Now' button on the homepage to enter the game.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
